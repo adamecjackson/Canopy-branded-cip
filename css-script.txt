@@ -1,0 +1,88 @@
+#!/bin/bash
+  
+JENKINSCSS=/var/cache/jenkins/war/css/style.css
+
+if [ -f $JENKINSCSS ]
+then
+
+        echo '' >> $JENKINSCSS 
+        echo '#jenkins-head-icon {' >> $JENKINSCSS
+        echo ' height: 0px;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+        echo '#jenkins-name-icon {' >> $JENKINSCSS
+        echo ' height: 0px;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+        echo '#header {' >> $JENKINSCSS
+        echo '	background-image: url("http://oi59.tinypic.com/rsdcex.jpg");' >> $JENKINSCSS
+        echo '	background-repeat: no-repeat;' >> $JENKINSCSS
+        echo '	background-color: white;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+        echo '.top-sticker-inner {' >> $JENKINSCSS
+        echo '	background-color: #0066A1;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+        echo '#breadcrumbs {' >> $JENKINSCSS
+        echo '	color: white;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+        echo '#breadcrumbs LI A:link, #breadcrumbs LI A:visited {' >> $JENKINSCSS
+        echo '	color: white !important;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+        echo '#right-top-nav {' >> $JENKINSCSS
+        echo '	color: white;' >> $JENKINSCSS
+        echo '}' >> $JENKINSCSS
+
+else
+        echo "Jenkins CSS file does not exist"
+
+fi
+
+SONARCSSFILE=/home/users/amp/brooklyn-managed-processes/installs/SonarServerNode_4.5.2/sonarqube-4.5.2/web/css/sonar.css
+
+if [ -f $SONARCSSFILE ]
+then
+
+        echo '' >> $JENKINSCSS 
+        echo '#hd{' >> $SONARCSSFILE 
+        echo ' background: white;' >> $SONARCSSFILE 
+        echo ' background-image: url("http://canopy-cloud.com/sites/all/themes/canopytheme/images/logo.png");' >> $SONARCSSFILE 
+        echo ' background-repeat: no-repeat;' >> $SONARCSSFILE 
+        echo ' height: 90px;' >> $SONARCSSFILE 
+        echo ' background-position: 75px 22px;' >> $SONARCSSFILE 
+        echo ' border-bottom: 6px solid #0066A1;' >> $SONARCSSFILE 
+        echo '}' >> $SONARCSSFILE 
+
+        echo '#nav-left{' >> $SONARCSSFILE 
+        echo ' margin-left: 450px;' >> $SONARCSSFILE 
+        echo ' margin-top: 25px;' >> $SONARCSSFILE 
+        echo '}' >> $SONARCSSFILE 
+
+        echo '#hd a {' >> $SONARCSSFILE 
+        echo ' color: #000000;' >> $SONARCSSFILE 
+        echo ' line-height: 25px;' >> $SONARCSSFILE 
+        echo ' font-weight: bolder !important;' >> $SONARCSSFILE 
+        echo ' font-size: 13px !important;' >> $SONARCSSFILE 
+        echo '}' >> $SONARCSSFILE 
+
+        echo '#searchInput {' >> $SONARCSSFILE 
+        echo ' padding-right: 30px;' >> $SONARCSSFILE 
+        echo ' margin-top: 30px;' >> $SONARCSSFILE 
+        echo '}' >> $SONARCSSFILE 
+
+        echo '#hd a.selected, #hd a:hover, #hd a:focus {' >> $SONARCSSFILE 
+        echo ' border-bottom: 3px solid #4b9fd5;' >> $SONARCSSFILE 
+        echo '}' >> $SONARCSSFILE 
+
+        echo 'a#login-link {' >> $SONARCSSFILE 
+        echo ' top: 25px;' >> $SONARCSSFILE 
+        echo ' position: relative;' >> $SONARCSSFILE 
+        echo '}' >> $SONARCSSFILE 
+
+else
+        echo "Sonar CSS file does not exist"
+
+fi
